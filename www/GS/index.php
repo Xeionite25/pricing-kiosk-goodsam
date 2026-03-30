@@ -1,9 +1,10 @@
 <?php
 
+session_start();
+// require_once '../GS/Pages/session_checker.php';
+
 // use Tracy\Debugger;
-//
 // require 'vendor/autoload.php'; // alternatively tracy.phar
-//
 // Debugger::enable();
 ?>
 <!DOCTYPE html>
@@ -54,7 +55,7 @@
   <!-- Top bar -->
   <div style="background-color: #29842e" class="h-11 grid grid-cols-3">
     <div class="flex"></div>
-    <div class="flex" style="background-color: #29842e" href="../GS/Pages/admin_panel.html" style="cursor:default" id="admin-verify"></div>
+    <div class="flex" style="background-color: #29842e" href="../GS/Pages/admin_panel.php" style="cursor:default" id="admin-verify"></div>
     <div class="flex"></div>
   </div>
 
@@ -186,13 +187,17 @@
 </body>
 </html>
 <script>
-document.getElementById('admin-verify').addEventListener('click',  function(event){
-var key = prompt("Enter password to access admin panel: ");
-if(key === 'ilovegoodsam'){
-window.location.href = "../GS/Pages/admin_panel.html";
-}else{
-alert("Incorrect Password");
-}
-});
+document.getElementById('admin-verify').addEventListener('click', function(event) {
+  var key = prompt("Enter password to access admin panel: ");
+  if (key === 'ilovegoodsam') {
 
+    // First set session, THEN redirect with token
+    fetch('/GS/Pages/set_session.php')
+    .then(() => {
+      window.location.href = "/GS/Pages/admin_panel.php?token=" + Date.now();
+    });
+  } else {
+    alert("Incorrect Password");
+  }
+});
 </script>

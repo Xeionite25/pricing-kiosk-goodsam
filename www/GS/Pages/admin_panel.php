@@ -1,3 +1,9 @@
+<?php
+
+require_once '../Pages/session_checker.php';
+echo "Session main: " . (isset($_SESSION['main']) ? $_SESSION['main'] : 'NOT SET');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
