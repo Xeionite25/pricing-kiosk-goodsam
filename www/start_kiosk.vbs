@@ -22,7 +22,7 @@ objShell.Run """" & strPhpExe & """ -c """ & strPhpIni & """ -S localhost:8000 -
 ' Wait for server to start
 WScript.Sleep 2000
 
-url = "http://localhost:8000/GS/index.html"
+url = "http://localhost:8000/GS/index.php"
 
 ' Function to find browser
 Function FindBrowser(browserExe)

@@ -1,7 +1,8 @@
 <?php
 
 require_once '../Pages/session_checker.php';
-echo "Session main: " . (isset($_SESSION['main']) ? $_SESSION['main'] : 'NOT SET');
+// echo "Session main: " . (isset($_SESSION['main']) ? $_SESSION['main'] : 'NOT SET');
+// echo(isset($_SESSION['main']))
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@ echo "Session main: " . (isset($_SESSION['main']) ? $_SESSION['main'] : 'NOT SET
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <!-- <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script> -->
-  <script src="../../Xlsx Package/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="/Xlsx Package/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
   <link href="/GS/src/output.css" rel="stylesheet">
   <link rel="icon" type="Images/png" href="../Images/gsm-logo-icon.png">
   <title>Admin Panel</title>
